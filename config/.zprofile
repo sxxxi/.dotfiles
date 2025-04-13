@@ -7,7 +7,8 @@ OS_NAME=$(uname -s)
 
 # SSH agent
 if [ -z $SSH_AUTH_SOCK ] && [ -z "$(pgrep -u $USER ssh-agent)" ]; then
-    eval $(ssh-agent -s);
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/gitkey > /dev/null
 fi
 
 # NVM
