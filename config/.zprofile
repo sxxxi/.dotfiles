@@ -6,7 +6,7 @@ OS_NAME=$(uname -s)
 [ ! -d $XDG_CONFIG_HOME ] && mkdir $XDG_CONFIG_HOME
 
 # SSH agent
-if [ -z $SSH_AUTH_SOCK ] && [ ! pgrep -u $USER ssh-agent > /dev/null ]; then
+if [ -z $SSH_AUTH_SOCK ] && [ -z "$(pgrep -u $USER ssh-agent)" ]; then
     eval $(ssh-agent -s);
 fi
 
