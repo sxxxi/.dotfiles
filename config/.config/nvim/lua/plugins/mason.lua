@@ -133,8 +133,14 @@ return {
 
           nvim_lsp.intelephense.setup {
             root_dir = nvim_lsp.util.root_pattern(unpack(all_php_root_patterns)),
-            init_options = {
-              stubs = phpStubs,
+            settings = {
+              intelephense = {
+                stubs = phpStubs,
+                format = {
+                  enable = true,
+                  braces = "k&r",
+                }
+              }
             }
           }
         end,
