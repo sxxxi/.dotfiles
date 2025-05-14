@@ -32,11 +32,13 @@ return {
     dependencies = {
       { 'hrsh7th/cmp-nvim-lsp' },
     },
+
     init = function()
       -- Reserve a space in the gutter
       -- This will avoid an annoying layout shift in the screen
       vim.opt.signcolumn = 'yes'
     end,
+
     config = function()
       local lsp_defaults = require('lspconfig').util.default_config
 
@@ -70,8 +72,27 @@ return {
 
       -- These are just examples. Replace them with the language
       -- servers you have installed in your system
-      require('lspconfig').gleam.setup({})
-      require('lspconfig').ocamllsp.setup({})
+
+      vim.lsp.config("intelephense", {
+        filetypes = {
+          "php",
+        },
+        root_markers = {
+          "wp-config.php",
+          "wp-content",
+          ".git",
+        },
+        settings = {
+          ["intelephense"] = {
+            format = {
+              enable = true,
+              braces = "k&r",
+            }
+          }
+        }
+      })
+      vim.lsp.enable("intelephense")
+
     end
   },
 }

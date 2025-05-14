@@ -20,7 +20,7 @@ vim.opt.incsearch = true          -- Incremental search (search while typing)
 vim.opt.ignorecase = false        -- Ignore case when searching
 vim.opt.smartcase = true          -- Override ignorecase if search includes uppercase
 
-local space = 2
+local space = 4
 
 -- Indentation settings
 vim.opt.expandtab = true
