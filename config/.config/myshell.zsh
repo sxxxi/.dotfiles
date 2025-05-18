@@ -68,12 +68,12 @@ a() {
 alias psvn="svn --username 'akakabe.seiji.ap' --password '3269akakabe.seiji.ap'"
 
 # |=============================|
-# |         Entrypoint          |
-# |=============================|
-clear && eval "$(starship init zsh)";
-
-# |=============================|
 # |         Variables           |
 # |=============================|
 export FUNAI="https://tr2p.poweredge.co.jp/repos/funai_jinzai/branches";
 export FUNAI_ROOT="https://tr2p.poweredge.co.jp/repos/funai_jinzai";
+
+# |=============================|
+# |         Entrypoint          |
+# |=============================|
+clear && eval "$(starship init zsh)";

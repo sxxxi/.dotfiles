@@ -20,7 +20,7 @@ if ! package_installed brew; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-deps=("nvim" "tmux" "ghostty" "stow" "git" "ripgrep")
+deps=("nvim" "tmux" "ghostty" "stow" "git" "ripgrep" "xclip")
 to_install=()
 
 # Queue package names not found in the system
