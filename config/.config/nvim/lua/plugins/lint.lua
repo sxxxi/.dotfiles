@@ -1,4 +1,5 @@
 return {
+  --[[
   "mfussenegger/nvim-lint",
   event = { "BufWritePost" },
   config = function()
@@ -14,4 +15,5 @@ return {
       args = { "lint" },
     }
   end,
+  ]]
 }

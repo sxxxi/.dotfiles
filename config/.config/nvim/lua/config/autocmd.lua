@@ -1,5 +1,11 @@
 vim.api.nvim_clear_autocmds({ event = { "VimEnter", "FileType", } })
 
+vim.filetype.add({
+  extension = {
+    tf = "terraform"
+  }
+})
+
 -- Open file explorer on startup
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()

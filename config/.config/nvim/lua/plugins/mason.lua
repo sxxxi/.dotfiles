@@ -15,6 +15,8 @@ return {
         "html",
         "cssls",
         "tailwindcss",
+        "rust_analyzer",
+        "gopls",
       },
     },
   },

@@ -5,7 +5,7 @@ return {
   cmd = { "ConformInfo" },
   keys = {
     {
-      "<F3>",
+      "<F4>",
       function()
         require("conform").format({ async = true })
       end,
@@ -82,7 +82,7 @@ return {
           local rules_json = vim.json.encode(rules)
           return {
             "--using-cache=no",
-            "--rules=" .. rules_json,
+            '--rules={ "@PSR12": true, "braces_position": { "control_structures_opening_brace": "same_line", "functions_opening_brace": "same_line", "classes_opening_brace": "same_line" }, "indentation_type": true, "method_chaining_indentation": true, "concat_space": { "spacing": "one" }, "single_quote": { "strings_containing_single_quote_chars": false } }',
           }
         end,
       },
