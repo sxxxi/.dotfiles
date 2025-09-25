@@ -2,28 +2,16 @@
   "$help": "https://aka.ms/terminal-documentation",
   "$schema": "https://aka.ms/terminal-profiles-schema",
   "actions": [],
-  "launchMode": "focus",
+  "alwaysShowTabs": false,
+  "copyFormatting": "none",
+  "copyOnSelect": true,
+  "defaultProfile": "{f43666a2-958e-563b-8b3e-381691c49e9d}",
+  "disableAnimations": true,
+  "disabledProfileSources": [],
+  "initialCols": 130,
   "initialPosition": "0,0",
   "initialRows": 75,
-  "initialCols": 130,
-  "copyFormatting": false,
-  "copyOnSelect": true,
-  "disableAnimations": true,
-  "tabSwitcherMode": false,
-  "alwaysShowTabs": false,
-  "defaultProfile": "{f43666a2-958e-563b-8b3e-381691c49e9d}",
-  "tabWidthMode": "compact",
-  "disabledProfileSources": [
-    "Windows.Terminal.Wsl",
-    "Windows.Terminal.Azure",
-    "Windows.Terminal.PowershellCore",
-    "Windows.Terminal.SSH"
-  ],
   "keybindings": [
-    {
-      "id": "Terminal.CopyToClipboard",
-      "keys": "ctrl+shfit+c"
-    },
     {
       "id": "Terminal.PasteFromClipboard",
       "keys": "ctrl+shift+v"
@@ -33,6 +21,7 @@
       "keys": "alt+shift+d"
     }
   ],
+  "launchMode": "focus",
   "newTabMenu": [
     {
       "type": "remainingProfiles"
@@ -40,17 +29,19 @@
   ],
   "profiles": {
     "defaults": {
+      "antialiasingMode": "cleartype",
+      "bellStyle": "none",
       "colorScheme": "Catppuccin Mocha",
-      "useAcrylic": true,
-      "opacity": 70,
+      "cursorShape": "filledBox",
       "font": {
         "face": "JetBrainsMono Nerd Font",
         "size": 11,
         "weight": "light"
       },
-      "cursorShape": "filledBox",
-      "antialiasingMode": "cleartype",
-      "bellStyle": "none"
+      "opacity": 100,
+      "padding": "0,0,0,-2",
+      "scrollbarState": "hidden",
+      "useAcrylic": false
     },
     "list": [
       {
@@ -82,39 +73,54 @@
         "hidden": true,
         "name": "Azure Cloud Shell",
         "source": "Windows.Terminal.Azure"
+      },
+      {
+        "guid": "{1316435f-6fe1-58f7-82de-fe9720be70dc}",
+        "hidden": false,
+        "name": "FedoraLinux-42",
+        "source": "Microsoft.WSL"
+      },
+      {
+        "guid": "{400ac678-4b14-5cc2-ad13-867d5bea2345}",
+        "hidden": false,
+        "name": "Debian",
+        "source": "Microsoft.WSL"
       }
     ]
   },
   "schemes": [
     {
-      "name": "Catppuccin Mocha",
-      "cursorColor": "#F5E0DC",
-      "selectionBackground": "#585B70",
       "background": "#1E1E2E",
-      "foreground": "#CDD6F4",
       "black": "#45475A",
-      "red": "#F38BA8",
-      "green": "#A6E3A1",
-      "yellow": "#F9E2AF",
       "blue": "#89B4FA",
-      "purple": "#F5C2E7",
-      "cyan": "#94E2D5",
-      "white": "#BAC2DE",
       "brightBlack": "#585B70",
-      "brightRed": "#F38BA8",
-      "brightGreen": "#A6E3A1",
-      "brightYellow": "#F9E2AF",
       "brightBlue": "#89B4FA",
-      "brightPurple": "#F5C2E7",
       "brightCyan": "#94E2D5",
-      "brightWhite": "#A6ADC8"
+      "brightGreen": "#A6E3A1",
+      "brightPurple": "#F5C2E7",
+      "brightRed": "#F38BA8",
+      "brightWhite": "#A6ADC8",
+      "brightYellow": "#F9E2AF",
+      "cursorColor": "#F5E0DC",
+      "cyan": "#94E2D5",
+      "foreground": "#CDD6F4",
+      "green": "#A6E3A1",
+      "name": "Catppuccin Mocha",
+      "purple": "#F5C2E7",
+      "red": "#F38BA8",
+      "selectionBackground": "#585B70",
+      "white": "#BAC2DE",
+      "yellow": "#F9E2AF"
     }
   ],
+  "tabSwitcherMode": "disabled",
+  "tabWidthMode": "compact",
   "themes": [
     {
       "name": "Catppuccin Mocha",
       "tab": {
         "background": "#1E1E2EFF",
+        "iconStyle": "default",
         "showCloseButton": "always",
         "unfocusedBackground": null
       },
@@ -123,7 +129,11 @@
         "unfocusedBackground": "#11111BFF"
       },
       "window": {
-        "applicationTheme": "dark"
+        "applicationTheme": "dark",
+        "experimental.rainbowFrame": false,
+        "frame": null,
+        "unfocusedFrame": null,
+        "useMica": false
       }
     }
   ]
