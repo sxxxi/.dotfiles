@@ -1,0 +1,45 @@
+# CLI
+brew "gcc"
+brew "ruby"
+brew "subversion"
+brew "colordiff"
+brew "htop"
+brew "neofetch"
+brew "tree"
+brew "fzf"
+brew "fd"
+brew "ripgrep"
+brew "eza"
+brew "less"
+
+brew "tmux"
+brew "neovim"
+brew "starship"
+
+# JS
+brew "node"
+tap "oven-sh/bun"
+brew "oven-sh/bun/bun"
+
+# PHP
+# brew "composer"
+
+# sudo apt install build-essential rustc libssl-dev libyaml-dev zlib1g-dev libgmp-dev git
+# brew "mise"
+# [ZSH] echo 'eval "$(mise activate zsh)"' >> "${ZDOTDIR-$HOME}/.zshrc"
+# [Fish] echo 'mise activate fish | source' >> ~/.config/fish/config.fish
+# mise use -g ruby@3
+# gem install rails
+
+# brew "cbonsai"
+# brew "asciiquarium"
+# brew "cmatrix"
+# brew "asciinema"
+# brew "croc"
+# brew "ttyd"
+
+# Java | Spring
+# brew "openjdk@21"
+# tap "spring-io/tap"
+# brew "spring-io/tap/spring-boot"
+
