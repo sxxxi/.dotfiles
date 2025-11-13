@@ -2,6 +2,7 @@
 
 # !!REQUIRES!! -> [ zsh, tmux ]
 # SOURCE THIS AT THE VERY END OF THE ZSHRC
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # |=============================|
 # |		Zinit shennanigans				|
@@ -43,6 +44,11 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # Brew
 if [ "$(uname -s)" = "Linux" ] && [ -d "/home/linuxbrew" ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+# Ruby Gems
+if [ ! -z "$(command -v gem)" ]; then
+    export PATH="$(gem environment gemdir)/bin:$PATH"
 fi
 
 # |=============================|
