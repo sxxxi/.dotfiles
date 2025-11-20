@@ -14,6 +14,7 @@ return {
         "biome",
         "html",
         "cssls",
+        "ruby_lsp",
           --[[
         "tailwindcss",
         "rust_analyzer",
