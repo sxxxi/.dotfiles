@@ -2,6 +2,7 @@
 -- vim.cmd.colorscheme("kanagawa-dragon")
 vim.cmd.colorscheme("kanagawa-wave")
 -- vim.cmd.colorscheme("catppuccin-mocha")
+-- vim.cmd.colorscheme("tokyonight-night")
 vim.opt.termguicolors = true
 vim.opt.title = false
 vim.opt.titlestring = "It\"s hacking time"
