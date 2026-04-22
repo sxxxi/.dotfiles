@@ -15,6 +15,8 @@ return {
         "html",
         "cssls",
         "ruby_lsp",
+        "pylsp",
+        "kotlin_lsp",
           --[[
         "tailwindcss",
         "rust_analyzer",

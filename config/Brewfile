@@ -1,23 +1,25 @@
 # CLI
 brew "gcc"
-brew "ruby"
 brew "rbenv"
-brew "ruby-build"
+# brew "ruby-build"
 # brew "ruby"
 # brew "subversion"
 brew "colordiff"
 brew "htop"
-brew "neofetch"
-brew "tree"
+# brew "neofetch"
+# brew "tree"
 brew "fzf"
 brew "fd"
 brew "ripgrep"
 brew "eza"
 brew "less"
+brew "podman"
 
 brew "tmux"
 brew "neovim"
 brew "starship"
+brew "stow"
+brew "luarocks"
 
 # JS
 brew "node"
@@ -25,7 +27,12 @@ tap "oven-sh/bun"
 brew "oven-sh/bun/bun"
 
 # PHP
-# brew "composer"
+brew "php"
+brew "composer"
+tap "symfony-cli/tap"
+brew "symfony-cli/tap/symfony-cli"
+
+brew "gradle"
 
 # sudo apt install build-essential rustc libssl-dev libyaml-dev zlib1g-dev libgmp-dev git
 # brew "mise"
@@ -48,4 +55,12 @@ brew "oven-sh/bun/bun"
 
 cask_args appdir: "~/Applications", require_sha: true
 cask "ghostty"
-cask "postman"
+# cask "visual-studio-code"
+# cask "postman"
+
+# tap "anomalyco/tap"
+# brew "anomalyco/tap/opencode"
+# 
+brew "lazygit"
+
+
