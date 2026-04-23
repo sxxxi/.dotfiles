@@ -1,6 +1,7 @@
 --MasonInstall prettier biome stylua php-cs-fixer prettierd
 return {
   "stevearc/conform.nvim",
+  enable = false,
   event = { "BufEnter" },
   cmd = { "ConformInfo" },
   keys = {

@@ -1,58 +1,36 @@
+local function file_browser()
+  require("telescope").extensions.file_browser.file_browser({
+    cwd = vim.fn.expand("%:p:h"),
+  })
+end
+
 return {
-  {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
-    dependencies = { 'nvim-lua/plenary.nvim' }
-  },
-  {
+  "nvim-telescope/telescope.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "nvim-telescope/telescope-frecency.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
-    config = function()
-      local telescope = require "telescope"
-      telescope.setup {
-        extensions = {
-          file_browser = {
-            grouped = true,
-            sorting_strategy = "ascending",
-            hidden = true,
-            respect_gitignore = false,
-          }
-        }
+  },
+  opts = {
+    -- :h telescope.defaults
+    extensions = {
+      file_browser = {
+        initial_mode = "normal",
+        sorting_strategy = "ascending",
+        grouped = true,
+        hidden = true,
+        respect_gitignore = true,
+        no_ignore = false,
+        follow_symlinks = true,
+        depth = 1,
       }
-      telescope.load_extension "file_browser"
-    end,
-    keys = {
-      {
-        "<leader>ft",
-        function()
-          local builtin = require("telescope.builtin")
-          builtin.treesitter()
-        end,
-        desc = "Telescope file finder",
-      },
-      {
-        "<leader>ff",
-        function()
-          local builtin = require("telescope.builtin")
-          builtin.find_files({
-            hidden = true,
-            no_igrnore = false
-          })
-        end,
-        desc = "Telescope file finder",
-      },
-      {
-        "<leader>fb",
-        function()
-          require('telescope').extensions.file_browser.file_browser({
-            cwd = vim.fn.expand('%:p:h'),
-            hidden = true
-          })
-          vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true), 'n', true) -- Simulate pressing ESC
-        end,
-        desc = "Telescope file browser in file's directory"
-      },
-      { "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Telescope help tags" },
-      { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Telescope live grep" },
-    },
+    }
+  },
+  keys = {
+    { "<leader>fb", file_browser, desc = "Telescope file browser in file's directory" },
+    { "<leader>ff", "<cmd>Telescope frecency workspace=CWD<CR>", desc = "Telescope file finder" },
+    { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Telescope live grep" },
+    { "<leader>ft", "<cmd>Telescope treesitter<CR>", desc = "Telescope Treesitter" },
   },
 }

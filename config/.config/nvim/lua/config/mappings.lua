@@ -1,20 +1,16 @@
+local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
+
 -- Tabs
-vim.keymap.set("n", "<Tab>", ":tabn<CR>", { noremap = true })
-vim.keymap.set("n", "<S-Tab>", ":tabp<CR>", { noremap = true })
+map("n", "<Tab>",   ":tabn<CR>", opts)
+map("n", "<S-Tab>", ":tabp<CR>", opts)
 
 -- Folding
-vim.keymap.set("n", "<leader>fl", "$zf%", { noremap = true })
+map("n", "<leader>fl", "$zf%", opts)
 
 -- Diagnostic
-vim.keymap.set("n", "<C-g><C-g>", function ()
-  vim.diagnostic.setloclist()
-end)
+map("n", "<C-g><C-g>", vim.diagnostic.setloclist, opts)
 
 -- LSP
-vim.keymap.set("n", "<F3>", function ()
-  vim.lsp.buf.format()
-end)
-
-vim.keymap.set("n", "<F2>", function ()
-  vim.lsp.buf.rename()
-end)
+map("n", "<F3>", vim.lsp.buf.format, opts)
+map("n", "<F2>", vim.lsp.buf.rename, opts)

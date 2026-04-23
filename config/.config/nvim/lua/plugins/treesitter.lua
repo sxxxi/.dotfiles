@@ -1,37 +1,24 @@
+local parsers = {
+  "html", "css", "php", "javascript", "typescript", "tsx",
+  -- "kotlin", "python", "rust", "java", "c", "lua",
+  -- "markdown", "markdown_inline", "go", "hcl", "terraform",
+}
 return {
   "nvim-treesitter/nvim-treesitter",
-  enabled = true,
+  build = ":TSUpdate",
   config = function()
-    --[[
-    vim.treesitter.language.register('html', 'blade')
-    vim.treesitter.language.register('css', 'blade')
-    vim.treesitter.language.register('php', 'blade')
-    ]]
 
-    require("nvim-treesitter.configs").setup({
-      auto_install = true,
-      ensure_installed = {
-        "html",
-        "css",
-        "php",
-        "javascript",
-        "typescript",
-          --[[
-        "kotlin",
-        "python",
-        "rust",
-        "java",
-        "c",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "go",
-        "hcl",
-        "terraform",
-        ]]
-      },
-      highlight = { enable = true },
-      indent = { enable = true },
+    -- Install parsers
+    local ts_install = require("nvim-treesitter.install")
+    ts_install.prefer_git = true
+    ts_install.install(parsers)
+
+    -- Start if buffer has installed parser
+    vim.api.nvim_create_autocmd("FileType", {
+      callback = function()
+        pcall(vim.treesitter.start)
+      end,
     })
+
   end,
 }
