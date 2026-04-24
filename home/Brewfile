@@ -1,0 +1,59 @@
+# CLI
+brew "gcc"
+brew "rbenv"
+brew "colordiff"
+brew "htop"
+brew "lazygit"
+brew "tree-sitter-cli"
+brew "fzf"
+brew "fd"
+brew "ripgrep"
+brew "eza"
+brew "less"
+brew "podman"
+# brew "cbonsai"
+# brew "asciiquarium"
+# brew "cmatrix"
+# brew "asciinema"
+# brew "croc"
+# brew "ttyd"
+# brew "subversion"
+# brew "neofetch"
+# brew "tree"
+
+# Tools
+brew "tmux"
+brew "neovim"
+brew "starship"
+brew "stow"
+brew "luarocks"
+
+# JS
+brew "node"
+tap "oven-sh/bun"
+brew "oven-sh/bun/bun"
+
+# PHP
+brew "php"
+brew "composer"
+tap "symfony-cli/tap"
+brew "symfony-cli/tap/symfony-cli"
+
+# Ruby
+# sudo apt install build-essential rustc libssl-dev libyaml-dev zlib1g-dev libgmp-dev git
+# brew "mise"
+# [ZSH] echo 'eval "$(mise activate zsh)"' >> "${ZDOTDIR-$HOME}/.zshrc"
+# [Fish] echo 'mise activate fish | source' >> ~/.config/fish/config.fish
+# mise use -g ruby@3
+# gem install rails
+# brew "ruby-build"
+# brew "ruby"
+
+# Java | Spring
+# brew "openjdk@21"
+# tap "spring-io/tap"
+# brew "spring-io/tap/spring-boot"
+# brew "gradle"
+
+cask_args appdir: "~/Applications", require_sha: true
+cask "ghostty"
