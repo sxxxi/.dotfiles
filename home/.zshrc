@@ -62,4 +62,4 @@ alias ll="ls -l"
 # |=============================|
 # |         Entrypoint          |
 # |=============================|
-eval "$(starship init zsh 2> /dev/null)"
+clear && eval "$(starship init zsh 2> /dev/null)"
