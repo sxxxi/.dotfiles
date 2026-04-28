@@ -36,6 +36,8 @@ local two_space_indent_fts = {
   "typescriptreact", "css", "scss", "markdown",
 }
 
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 vim.opt.expandtab = true
 vim.opt.smarttab = true
 vim.opt.shiftround = true
