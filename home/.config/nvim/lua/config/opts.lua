@@ -4,7 +4,7 @@ vim.cmd.colorscheme("catppuccin-mocha")
 -- Interface settings
 vim.opt.termguicolors = true
 vim.opt.number = true
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 vim.opt.numberwidth = 1
 vim.opt.relativenumber = true
 vim.opt.wrap = true                         -- Enable line wrapping
