@@ -48,9 +48,9 @@ vim.opt.smarttab = true
 vim.opt.shiftround = true
 vim.opt.list = true                         -- Show whitespace characters
 vim.opt.listchars = {                       -- Custom symbols for whitespace
-  tab = "> ",
-  trail = "-",
-  space = " "
+  tab = "› ",
+  trail = "ᐧ",
+  space = " ",
 }
 
 vim.api.nvim_create_autocmd("FileType", {
