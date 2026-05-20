@@ -50,10 +50,15 @@ brew "symfony-cli/tap/symfony-cli"
 # brew "ruby"
 
 # Java | Spring
+
+tap "sdkman/tap"
+brew "sdkman-cli"
+
 # brew "openjdk@21"
-# tap "spring-io/tap"
-# brew "spring-io/tap/spring-boot"
-# brew "gradle"
+tap "spring-io/tap"
+brew "spring-io/tap/spring-boot"
+brew "gradle"
+brew "maven"
 
 cask_args appdir: "~/Applications", require_sha: true
 cask "ghostty"
