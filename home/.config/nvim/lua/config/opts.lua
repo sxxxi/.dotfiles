@@ -2,6 +2,7 @@
 vim.cmd.colorscheme("catppuccin-mocha")
 
 -- Interface settings
+-- vim.opt.backupcopy = "yes"               -- uncomment when doing docker watch magic
 vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.signcolumn = "yes"
