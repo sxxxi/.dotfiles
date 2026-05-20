@@ -1,7 +1,7 @@
 local ensure_installed = {
-  "lua_ls", "ts_ls", "intelephense", "html", "cssls",
+  "lua_ls", "ts_ls", "intelephense", "html", "cssls", "rust_analyzer", "jdtls"
   -- "biome", "ruby_lsp", "pylsp", "kotlin_lsp",
-  -- "rust_analyzer", "gopls", "tailwindcss",
+  -- "gopls", "tailwindcss",
 }
 
 return {

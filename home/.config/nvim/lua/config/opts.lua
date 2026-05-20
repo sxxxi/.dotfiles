@@ -32,9 +32,13 @@ local function set_indent_size(space)
 end
 
 local two_space_indent_fts = {
-  "jsonc", "json", "lua", "javascript", "yaml",
+  "jsonc", "json", "lua", "javascript", "yaml", "ruby",
   "typescript", "javascriptreact", "html", "dockerfile",
   "typescriptreact", "css", "scss", "markdown",
+}
+
+local tab_indent_fts = {
+  "java"
 }
 
 vim.opt.autoindent = true
@@ -60,6 +64,13 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = two_space_indent_fts,
   callback = function()
     set_indent_size(2)
+  end
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = tab_indent_fts,
+  callback = function()
+    vim.opt_local.expandtab = false
   end
 })
 

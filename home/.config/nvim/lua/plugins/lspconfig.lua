@@ -22,6 +22,22 @@ return {
       end,
     })
 
+    -- JDTLS
+    vim.lsp.config("jdtls", {
+      settings = {
+        java = {
+          configuration = {
+            runtimes = {
+              {
+                name = "SDKMAN",
+                path = "/usr/local/opt/sdkman-cli/libexec/candidates/java/current"
+              }
+            }
+          }
+        }
+      }
+    })
+
     -- PHP
     vim.lsp.config("intelephense", {
       root_markers = {
@@ -59,6 +75,5 @@ return {
     }
 
     vim.lsp.config("lua_ls", lua_config)
-
   end,
 }
