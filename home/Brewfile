@@ -1,6 +1,5 @@
 # CLI
 brew "gcc"
-brew "rbenv"
 brew "colordiff"
 brew "htop"
 brew "lazygit"
