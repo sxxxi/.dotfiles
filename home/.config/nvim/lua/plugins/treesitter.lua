@@ -1,6 +1,6 @@
 local parsers = {
-  "html", "css", "php", "javascript", "typescript", "tsx", "rust",
-  -- "kotlin", "python", "java", "c", "lua",
+  "html", "css", "php", "javascript", "typescript", "tsx", "rust", "java", "lua", "kotlin",
+  -- "kotlin", "python", "c",
   -- "markdown", "markdown_inline", "go", "hcl", "terraform",
 }
 return {

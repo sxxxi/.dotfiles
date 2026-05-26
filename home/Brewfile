@@ -27,11 +27,7 @@ brew "neovim"
 brew "starship"
 brew "stow"
 brew "luarocks"
-
-# JS
-brew "node"
-tap "oven-sh/bun"
-brew "oven-sh/bun/bun"
+brew "mise"
 
 # PHP
 brew "php"
@@ -39,22 +35,7 @@ brew "composer"
 tap "symfony-cli/tap"
 brew "symfony-cli/tap/symfony-cli"
 
-# Ruby
-# sudo apt install build-essential rustc libssl-dev libyaml-dev zlib1g-dev libgmp-dev git
-# brew "mise"
-# [ZSH] echo 'eval "$(mise activate zsh)"' >> "${ZDOTDIR-$HOME}/.zshrc"
-# [Fish] echo 'mise activate fish | source' >> ~/.config/fish/config.fish
-# mise use -g ruby@3
-# gem install rails
-# brew "ruby-build"
-# brew "ruby"
-
-# Java | Spring
-
-tap "sdkman/tap"
-brew "sdkman-cli"
-
-# brew "openjdk@21"
+# Spring
 tap "spring-io/tap"
 brew "spring-io/tap/spring-boot"
 brew "gradle"
@@ -62,3 +43,4 @@ brew "maven"
 
 cask_args appdir: "~/Applications", require_sha: true
 cask "ghostty"
+cask "zen"

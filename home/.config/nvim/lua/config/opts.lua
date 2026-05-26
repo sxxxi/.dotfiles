@@ -38,7 +38,7 @@ local two_space_indent_fts = {
 }
 
 local tab_indent_fts = {
-  "java"
+  "java", "kotlin",
 }
 
 vim.opt.autoindent = true

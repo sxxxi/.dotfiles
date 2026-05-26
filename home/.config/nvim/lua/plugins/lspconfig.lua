@@ -1,37 +1,24 @@
+local function mise_java(dir)
+  return vim.fn.expand("$HOME") .. "/.local/share/mise/installs/java/" .. dir
+end
+
 return {
   "neovim/nvim-lspconfig",
   lazy = false,
-  cmd = { "LspInfo", "LspInstall", "LspUninstall", },
-  event = { "BufReadPre", "BufNewFile", },
+  cmd = { "LspInfo", "LspInstall", "LspUninstall" },
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = { "mason-org/mason-lspconfig.nvim" },
   config = function()
-    vim.api.nvim_create_autocmd("LspAttach", {
-      desc = "LSP actions",
-      callback = function(event)
-        local opts = { buffer = event.buf }
-        vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
-        vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-        vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
-        vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
-        vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
-        vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
-        vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
-        vim.keymap.set("n", "gn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-        vim.keymap.set("n", "gf", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
-        vim.keymap.set("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-      end,
-    })
-
     -- JDTLS
     vim.lsp.config("jdtls", {
       settings = {
         java = {
           configuration = {
             runtimes = {
-              {
-                name = "SDKMAN",
-                path = "/usr/local/opt/sdkman-cli/libexec/candidates/java/current"
-              }
+              { name = "JavaSE-26", path = mise_java("temurin-26") },
+              { name = "JavaSE-25", path = mise_java("graalvm-community-25") },
+              { name = "JavaSE-21", path = mise_java("graalvm-community-21") },
+              { name = "JavaSE-17", path = mise_java("graalvm-community-17") },
             }
           }
         }
@@ -40,40 +27,39 @@ return {
 
     -- PHP
     vim.lsp.config("intelephense", {
-      root_markers = {
-        "wp-config.php",
-        "wp-includes",
-        "composer.json",
-        "artisan",
-        ".git",
-      },
+      root_markers = { "wp-config.php", "wp-includes", "composer.json", "artisan", ".git" },
       settings = {
-        ["intelephense"] = {
-          format = {
-            enable = true,
-            braces = "k&r",
-          },
+        intelephense = {
+          format = { enable = true, braces = "k&r" },
         },
       },
     })
 
-    ---@type vim.lsp.Config
-    local lua_config = {
+    -- Lua
+    vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
-          runtime = {
-            version = "LuaJIT",
-          },
+          runtime = { version = "LuaJIT" },
           workspace = {
             preloadFileSize = 1000,
-            library = {
-              vim.env.VIMRUNTIME
-            }
-          }
-        }
-      }
-    }
-
-    vim.lsp.config("lua_ls", lua_config)
+            library = { vim.env.VIMRUNTIME },
+          },
+        },
+      },
+    })
   end,
+  keys = {
+    { "K",   "<cmd>lua vim.lsp.buf.hover()<cr>" },
+    { "gd",  "<cmd>lua vim.lsp.buf.definition()<cr>" },
+    { "gD",  "<cmd>lua vim.lsp.buf.declaration()<cr>" },
+    { "gi",  "<cmd>lua vim.lsp.buf.implementation()<cr>" },
+    { "go",  "<cmd>lua vim.lsp.buf.type_definition()<cr>" },
+    { "gr",  "<cmd>lua vim.lsp.buf.references()<cr>" },
+    { "gs",  "<cmd>lua vim.lsp.buf.signature_help()<cr>" },
+    { "gn",  "<cmd>lua vim.lsp.buf.rename()<cr>" },
+    { "gf",  "<cmd>lua vim.lsp.buf.format({ async = true })<cr>" },
+    { "ga",  "<cmd>lua vim.lsp.buf.code_action()<cr>" },
+    { "<F3>","<cmd>lua vim.lsp.buf.format({ async = true })<cr>" },
+    { "<F2>","<cmd>lua vim.lsp.buf.rename()<cr>" },
+  },
 }
