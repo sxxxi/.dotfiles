@@ -40,6 +40,10 @@ brew "spring-io/tap/spring-boot"
 brew "gradle"
 brew "maven"
 
+# Ruby
+brew "libyaml"
+brew "openssl@3"
+
 cask_args appdir: "~/Applications", require_sha: true
 cask "ghostty"
 cask "zen"
