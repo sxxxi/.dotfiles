@@ -3,23 +3,29 @@ local parsers = {
   -- "kotlin", "python", "c",
   -- "markdown", "markdown_inline", "go", "hcl", "terraform",
 }
+
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   config = function()
+    -- Set preference globally before setup
+    require("nvim-treesitter.install").prefer_git = true
 
-    -- Install parsers
-    local ts_install = require("nvim-treesitter.install")
-    ts_install.prefer_git = true
-    ts_install.install(parsers)
+    -- Use the official setup API
+    require("nvim-treesitter.configs").setup({
+      -- This replaces your manual loop/install code safely
+      ensure_installed = parsers,
 
-    -- Start if buffer has installed parser
-    vim.api.nvim_create_autocmd("FileType", {
-      callback = function()
-        pcall(vim.treesitter.start)
-        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-      end,
+      -- This replaces your manual FileType autocmd and starts treesitter automatically
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+
+      -- This replaces your manual indentexpr tweak
+      indent = {
+        enable = true,
+      },
     })
-
   end,
 }

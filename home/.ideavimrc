@@ -1,0 +1,36 @@
+set number
+set relativenumber
+set wrap
+
+" Enhanced completion & UI features via IdeaVim extensions
+set ideajoin
+set ideastatusicon=enabled
+
+" --- Search ---
+set hlsearch
+set incsearch
+set noignorecase
+set smartcase
+
+" --- File system settings ---
+set clipboard+=unnamedplus
+
+" --- Mappings ---
+let mapleader = " "
+
+" --- Mappings::Files ---
+map <leader>ff :action GotoFile<CR>
+map <leader>fg :action FindInPath<CR>
+map <leader>fb :action Switcher<CR>
+map <leader>fa :action GotoAction<CR>
+
+" --- Mappings::Tabs ---
+map <Tab> :action NextTab<CR>
+map <S-Tab> :action PreviousTab<CR>
+
+" --- Mappings::LSP ---
+map gd :action GotoDeclaration<CR>
+map gr :action FindUsages<CR>
+map gi :action GotoImplementation<CR>
+map gy :action GotoTypeDeclaration<CR>
+map K  :action QuickJavaDoc<CR>
